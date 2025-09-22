@@ -1,0 +1,11 @@
+name: icmrta
+channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - matplotlib
+  - scipy
+prefix: /home/david_2004/anaconda3/envs/icmrta

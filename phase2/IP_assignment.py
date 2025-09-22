@@ -64,10 +64,6 @@ def IP_assignment(robot_list, task_list, hypes, printout=False):
                 task = task_list[task_idx]
                 net_reward = utils.calculate_net_reward(robot_team, task)                   
                 
-                # print(f'Robot team: {[robot.get_id() for robot in robot_team]}, Task: {task.get_id()}, Net Reward: {net_reward}')
-                # print(f"Team Size: {team_size}, Task Index: {task_idx}, Net Reward: {net_reward}")
-                # print(f'net_reward: {net_reward}')
-                # print(f'max_rewards[team_size, task_idx]: {max_rewards[team_size, task_idx]}')
                 if net_reward > max_rewards[team_size, task_idx]:
                     max_rewards[team_size, task_idx] = net_reward
 
@@ -133,8 +129,6 @@ def IP_assignment(robot_list, task_list, hypes, printout=False):
                 print(f"{partition} | {upper_bounds[partition_idx]:.2f}")
             print("num partitions left: ", len(partitions))
             print("num_upper_bounds left: ", len(upper_bounds))
-
-        # The best_assignment is already in the desired dictionary format, so we don't need to convert it
 
         if printout:
             print("Final best_assignment: ", best_assignment)

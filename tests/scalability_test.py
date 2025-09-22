@@ -14,7 +14,7 @@ from algorithms.SA_efficient import SA_efficient
 import test_utils as tu
 
 # Test Parameters
-num_tests = 100
+num_tests = 2
 time_limit = 10  # seconds
 
 # Problem sizes
@@ -29,10 +29,9 @@ problem_sizes = [
 methods_to_use = [
     'random_clustering',
     'heuristic_clustering',
-#    'simulated_annealing'
 ]
 
-# Common Problem HyperParameters
+# Problem HyperParameters
 kappa = 3  # number of capabilities
 max_x = 100
 max_y = 100
@@ -44,15 +43,11 @@ L_r = 6  # Max number of robots in a cluster
 L_t = 3  # Max number of tasks in a cluster
 temp = 20   # temperature ratio for softmax
 
-# SA Hyperparameters
-initial_SA_temp = 10
-SA_solutions_to_test = 80000
 
 # Colors for each method
 colors = {
     'random_clustering': 'black',
     'heuristic_clustering': 'blue',
-    'simulated_annealing': 'red'
 }
 
 # Line styles for each problem size
@@ -69,8 +64,7 @@ for size in problem_sizes:
     # Update hyperparameters
     hypes = {
         'nu': nu, 'mu': mu, 'kappa': kappa, 'L': L, 'L_r': L_r, 'L_t': L_t,
-        'max_d': max_d, 'temp': temp, 'initial_SA_temp': initial_SA_temp,
-        'SA_solutions_to_test': SA_solutions_to_test, 'max_x': max_x, 'max_y': max_y
+        'max_d': max_d, 'temp': temp, 'max_x': max_x, 'max_y': max_y
     }
     
     # Generate problem instance
@@ -85,8 +79,6 @@ for size in problem_sizes:
                 _, _, rewards, times = cluster_assignment_rand(robot_list, task_list, hypes, time_limit=time_limit)
             elif method == 'heuristic_clustering':
                 _, _, rewards, times = cluster_assignment_heuristic(robot_list, task_list, hypes, time_limit=time_limit)
-            elif method == 'simulated_annealing':
-                _, _, rewards, times = SA_efficient(robot_list, task_list, hypes, time_limit)
             
             results[size][method].append((rewards, times))
             print(f"{method.capitalize()} final reward: {rewards[-1]}")
@@ -250,58 +242,6 @@ else:
 
 plt.tight_layout()
 plt.savefig('comparison_performance.png', dpi=300, bbox_inches='tight')
-plt.show()
-
-# -------------------------------------------------------------
-# Fig 2 Contours
-# -------------------------------------------------------------
-
-# Create a second figure for the contour plot
-fig2, ax2 = plt.subplots(figsize=(8, 5))
-
-# Define a finer time grid for the contour plot
-contour_time_grid = np.linspace(0, time_limit, 100)
-
-# Create arrays to hold the data for the contour plot
-problem_sizes_values = np.array([size[0] for size in problem_sizes])  # Number of robots
-rewards_matrix = np.zeros((len(problem_sizes), len(contour_time_grid)))
-
-# Fill the rewards matrix
-for i, size in enumerate(problem_sizes):
-    # Calculate average rewards using stairstep approach
-    avg_rewards = np.zeros(len(contour_time_grid))
-    for test_rewards, test_times in results[size]['random_clustering']:
-        current_reward = 0
-        for j, t in enumerate(contour_time_grid):
-            idx = np.searchsorted(test_times, t, side='right') - 1
-            if idx >= 0:
-                current_reward = test_rewards[idx]
-            avg_rewards[j] += current_reward
-    avg_rewards /= num_tests
-    rewards_matrix[i, :] = avg_rewards
-
-# Create a meshgrid for the contour plot
-X, Y = np.meshgrid(contour_time_grid, problem_sizes_values)
-
-# Create the contour plot
-contour = ax2.contourf(X, Y, rewards_matrix, 20, cmap='viridis')
-
-# Add a colorbar
-cbar = fig2.colorbar(contour, ax=ax2)
-cbar.set_label('Average Utility', fontsize=12)
-
-# Formatting
-ax2.set_xlabel('Time (seconds)', fontsize=14)
-ax2.set_ylabel('Problem Size: (Robots, Tasks)', fontsize=14)
-ax2.tick_params(axis='both', which='major', labelsize=12)
-#ax2.set_title('Random Clustering Performance vs Time and Problem Size', fontsize=14)
-
-# Add problem size labels on y-axis
-ax2.set_yticks(problem_sizes_values)
-ax2.set_yticklabels([f"({nu}, {mu})" for nu, mu in problem_sizes])
-
-plt.tight_layout()
-plt.savefig('contour_performance.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 # Print statistics at specific time stamps

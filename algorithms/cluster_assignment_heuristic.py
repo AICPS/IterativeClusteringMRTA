@@ -6,9 +6,9 @@ Inputs:
         L_r = maximum number of robots in a cluster
         L_t = maximum number of tasks in a cluster
         kappa = number of different robot capabilities
-        num_iterations = maximum number of clustering iterations to perform
+        num_iterations = maximum number of clustering iterations to perform (optional)
         time_limit = maximum execution time in seconds (optional)
-        printout = whether to print progress (optional)
+        printout = whether to print progress/debugging (optional)
         
 The Algorithm is as follows:
 1. Start with all robots and tasks in their own individual assignment grouping
@@ -71,7 +71,7 @@ def cluster_assignment_heuristic(robot_list, task_list, hypes, max_iterations=10
             cluster_assignments.append(assignment)
             cluster_assign_rewards.append(reward)
         
-        """ Convert the cluster assignments to a single assignment """
+        """ Convert the cluster assignments to a single global assignment """
         # Initialize the global assignment dictionary
         assignment = {-1: []}  # Start with empty list for unassigned robots
         for task in task_list:

@@ -30,13 +30,6 @@ import time
 def cluster_assignment_rand(robot_list, task_list, hypes, max_iterations=10000, time_limit=5.0, printout=False):
     
     start_time = time.time()
-    
-    # # Unpack hyperparameters
-    # L = hypes['L']
-    # L_r = hypes['L_r']
-    # L_t = hypes['L_t']
-    # kappa = hypes['kappa']
-    # temp = hypes['temp']
 
     # Initialize the rewards, assignment vectors, and time tracking
     iteration_rewards = []

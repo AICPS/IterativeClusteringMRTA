@@ -56,9 +56,6 @@ def SA_efficient(robot_list, task_list, hypes, time_limit = 5.0, printout=False)
     best_reward = current_reward
     best_assignment = current_solution.copy()
 
-    # checkpoint_rewards.append(best_reward)
-    # checkpoint_times.append(time.time() - start_time)
-
     iteration = 0
     while time.time() - start_time < time_limit:
         iteration += 1
@@ -97,15 +94,9 @@ def SA_efficient(robot_list, task_list, hypes, time_limit = 5.0, printout=False)
                         team_rewards[task_id] = phase2_utils.calculate_net_reward(robot_team, task)
 
         if iteration % 100 == 0:
-            # print(f'Checkpoint Reached!')
-            # print(f'Best Reward: {best_reward}')
-            # print(f'Current Reward: {current_reward}')
-            #print(f'Best Team Assignment: {best_assignment}')
             checkpoint_rewards.append(best_reward)
             checkpoint_times.append(time.time() - start_time)
     
-    # print(f"Reward Time: {reward_time}")
-    # print(f"Mutate Time: {mutate_time}")
     return best_reward, best_assignment, checkpoint_rewards, checkpoint_times
 
 def calculate_delta_reward(new_solution, changed_tasks, robot_list, task_list, old_team_rewards):

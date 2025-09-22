@@ -5,7 +5,7 @@ from shared_classes.robot import Robot
 
 """ 
 This code performs an exhaustive search for the optimal assignment of robots to tasks.
-Used to prove IP_assignment and IP_assignment_new correctly find optimal assignments.
+Used to check that IP_assignment correctly finds optimal assignments.
 """
 
 # My Code:

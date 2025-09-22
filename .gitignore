@@ -1,0 +1,98 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+*.swp
+.*.swp
+._*
+
+# IDE and Editor Files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools/
+.eclipse
+.settings/
+
+# Compiled Files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+*.pyo
+
+# Logs and Databases
+*.log
+*.sql
+*.sqlite
+
+# Build and Package Directories
+build/
+dist/
+bin/
+out/
+target/
+
+# Dependency Directories
+node_modules/
+bower_components/
+jspm_packages/
+vendor/
+
+# Environment and Configuration Files
+.env
+.env.local
+.env.*.local
+config.json
+
+# Temporary Files
+tmp/
+temp/
+
+# Python specific
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+ENV/
+
+# Java specific
+*.jar
+*.war
+*.ear
+
+# JavaScript/Node specific
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Ruby specific
+*.gem
+.bundle
+vendor/bundle
+
+# Backup files
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp
+
+# Other common ignore patterns
+*.zip
+*.tar.gz
+*.rar
+.cache/
+*.pdf
+*.csv
+*.pkl
+*.png
+*.pth
+*.Identifier

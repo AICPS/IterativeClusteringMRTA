@@ -101,7 +101,7 @@ for size in cluster_sizes:
         avg_data[size][i] = np.mean(iter_rewards)
 
 # -----------------------------------------------
-# NEW: Save averaged data to CSV (data required for regenerating the figure)
+""" Save averaged data to CSV (data required for regenerating the figure) """
 # -----------------------------------------------
 
 # Set up output directory and filename
@@ -118,22 +118,6 @@ with open(avg_csv_path, mode="w", newline="") as f:
             writer.writerow([it, size, float(avg_data[size][i])])
 
 print(f"Averaged data saved to: {os.path.abspath(avg_csv_path)}")
-# OPTIONAL: Save per-test raw rewards for more advanced post-processing (e.g., error bars)
-SAVE_PER_TEST = False  # Set True if you want a second CSV with all test runs
-if SAVE_PER_TEST:
-    raw_csv_path = os.path.join(
-        output_dir,
-        f"per_test_rewards_kappa{kappa}_nu{nu}_mu{mu}_tests{num_tests}_its{num_iterations}_{timestamp}.csv"
-    )
-    with open(raw_csv_path, mode="w", newline="") as f:
-        writer = csv.writer(f)
-        # Header: test_index, cluster_size, iteration, utility
-        writer.writerow(["test_index", "cluster_size", "iteration", "utility"])
-        for size in cluster_sizes:
-            for t_idx, rewards in enumerate(results[size]):
-                for i in range(len(rewards)):
-                    writer.writerow([t_idx + 1, size, i + 1, float(rewards[i])])
-    print(f"Per-test raw rewards saved to: {raw_csv_path}")
 
 # -----------------------------------------------
 """Figure: Average Utility per Iteration with Different Cluster Sizes"""

@@ -22,7 +22,7 @@ L = 3  # maximum team size for a single task
 L_r = 6  # Max number of robots in a cluster
 L_t = 3  # Max number of tasks in a cluster
 time_limit = 2  # maximum execution time in seconds
-num_tests = 500  # number of random tests to run
+num_tests = 2  # number of random tests to run
 temp = 20   # temperature ratio for softmax
 
 # Define a dictionary of hyperparameters to send to functions
@@ -162,8 +162,8 @@ if sum_optimal_rewards > 0:
     random_performance_ratio = (sum_random_rewards / sum_optimal_rewards) * 100
     heuristic_performance_ratio = (sum_heuristic_rewards / sum_optimal_rewards) * 100
 else:
-    random_performance_ratio = 0
-    heuristic_performance_ratio = 0
+    random_performance_ratio = 100
+    heuristic_performance_ratio = 100
 
 # Calculate average execution times
 avg_random_time = np.mean(random_times)

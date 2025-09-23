@@ -31,6 +31,11 @@ Example Output (Figure 2 in paper):
 <img width="450" height="300" alt="average_utility_vs_time" src="https://github.com/user-attachments/assets/5255add3-87be-4fd6-bc52-bd5b4fb7daa0" />
 
 ## Iterative Clustering Compared to Optimal for Small Problems
-For small-scale problems, the clustering methods can be directly compared against optimal solutions. The tests/iteration_optimal_compared.py script directly compares the solutions produced by iterative clustering against the optimal solution for 500 randomly generated problems with nu=10 robots and mu = 5 tasks.
+For small-scale problems, the clustering methods can be directly compared against optimal solutions. The tests/iteration_optimal_compared.py script directly compares the solutions produced by iterative clustering against the optimal solution for 500 randomly generated problems with nu = 10 robots and mu = 5 tasks.
+
+| Method | Exact Optimal Matches (%) | Average Utility Ratio (%) |
+|:-----|:------:|------:|
+| Random Iterative Clustering |   99.6    |     99.9 |
+| Heuristic Iterative Clustering |   99.0    |     99.9 |
 
 

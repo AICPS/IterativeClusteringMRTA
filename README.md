@@ -19,7 +19,7 @@ python tests/cluster_size_comparison_iterations.py
 ```
 ### Results:
 
-<img width="300" height="200" alt="average_utility_per_iteration" src="https://github.com/user-attachments/assets/dffa8eec-d455-49c2-93ed-f2485780dc95" />
+<img width="400" height="267" alt="average_utility_per_iteration" src="https://github.com/user-attachments/assets/dffa8eec-d455-49c2-93ed-f2485780dc95" />
 
 To test cluster size effects on utility over time:
 
@@ -28,7 +28,7 @@ python tests/cluster_size_comparison_time.py
 ```
 ### Results:
 
-<img width="300" height="200" alt="average_utility_vs_time" src="https://github.com/user-attachments/assets/5255add3-87be-4fd6-bc52-bd5b4fb7daa0" />
+<img width="400" height="267" alt="average_utility_vs_time" src="https://github.com/user-attachments/assets/5255add3-87be-4fd6-bc52-bd5b4fb7daa0" />
 
 ## Iterative Clustering Compared to Optimal for Small Problems
 For small-scale problems, the clustering methods can be directly compared against optimal solutions. The tests/iteration_optimal_compared.py script directly compares the solutions produced by iterative clustering against the optimal solution for 500 randomly generated problems with nu = 10 robots and mu = 5 tasks.

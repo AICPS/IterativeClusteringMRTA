@@ -26,7 +26,7 @@ To test cluster size effects on utility over time:
 python tests/cluster_size_comparison_time.py
 ```
 Example Output (Figure 2 in paper):
-<img width="1800" height="1200" alt="average_utility_vs_time" src="https://github.com/user-attachments/assets/5255add3-87be-4fd6-bc52-bd5b4fb7daa0" />
+<img width="450" height="300" alt="average_utility_vs_time" src="https://github.com/user-attachments/assets/5255add3-87be-4fd6-bc52-bd5b4fb7daa0" />
 
 ## Iterative Clustering Compared to Optimal for Small Problems
  

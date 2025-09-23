@@ -7,4 +7,4 @@ Create the conda environment:
 
 ```bash
 conda env create -f environment.yml
-conda activate myproject
+conda activate icmrta

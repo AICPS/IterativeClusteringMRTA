@@ -8,7 +8,8 @@ Create the conda environment:
 ```bash
 conda env create -f environment.yml
 conda activate icmrta
-```bash
+```
+
 ## Cluster Size Comparison
 The below scripts test how cluster size limits affect the performance of the algorithm.
 

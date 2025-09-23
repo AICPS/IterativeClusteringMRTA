@@ -22,7 +22,7 @@ L = 3  # maximum team size for a single task
 L_r = 6  # Max number of robots in a cluster
 L_t = 3  # Max number of tasks in a cluster
 time_limit = 2  # maximum execution time in seconds
-num_tests = 2  # number of random tests to run
+num_tests = 500  # number of random tests to run
 temp = 20   # temperature ratio for softmax
 
 # Define a dictionary of hyperparameters to send to functions
@@ -215,10 +215,10 @@ print(f"Equal performance: {ties} times ({ties/total_tests*100:.2f}%)")
 print("\n--- Execution Time Comparison ---")
 print(f"Random vs Optimal: Random is {avg_optimal_time/avg_random_time:.2f}x faster")
 print(f"Heuristic vs Optimal: Heuristic is {avg_optimal_time/avg_heuristic_time:.2f}x faster")
-if avg_heuristic_time > avg_random_time:
-    print(f"Random vs Heuristic: Random is {avg_heuristic_time/avg_random_time:.2f}x faster")
-else:
-    print(f"Heuristic vs Random: Heuristic is {avg_random_time/avg_heuristic_time:.2f}x faster")
+# if avg_heuristic_time > avg_random_time:
+#     print(f"Random vs Heuristic: Random is {avg_heuristic_time/avg_random_time:.2f}x faster")
+# else:
+#     print(f"Heuristic vs Random: Heuristic is {avg_random_time/avg_heuristic_time:.2f}x faster")
 
 # Save summary statistics to CSV
 with open("iteration_summary_stats.csv", 'w', newline='') as csvfile:

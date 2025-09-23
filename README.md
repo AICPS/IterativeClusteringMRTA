@@ -1,6 +1,8 @@
 # IterativeClusteringMRTA
-Simulation and Algorithm code to support the paper "Collaborative Task Allocation for Heterogeneous Multi-Robot Systems Through Iterative Clustering"
+This repositoy contains source code to support our paper "Collaborative Task Allocation for Heterogeneous Multi-Robot Systems Through Iterative Clustering".
 
+## Abstract
+Multi-robot systems face the challenge of efficiently allocating teams of heterogeneous robots to tasks. The task allocation problem is complicated by collaborative interactions between robots where teams of robots developemergent capabilities that enable them to complete tasks that would be inefficient or impossible for individual robots. To address these challenges, we present an iterative clustering algorithm for collaborative task allocation in heterogeneous multi-robot systems. This approach partitions the computationally intractable global optimization problem into smaller, tractable subproblems by iteratively forming clusters of robots and tasks, then optimizing assignments within each cluster. By ensuring robots remain clustered with their currently assigned tasks, we guarantee monotonic improvement in overall utility with each iteration. We analyze the convergence of the algorithm and characterize how cluster size constraints determine which suboptimal assignments could trap the algorithm. In simulation, iterative clustering consistently outperforms simulated annealing, and a group-based auction in both computation time and solution quality, and outperforms a hedonic game approach in solution quality.
 
 ## Setup
 Create the conda environment:

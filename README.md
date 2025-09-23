@@ -18,7 +18,7 @@ To test cluster size effects on utility per iteration:
 python tests/cluster_size_comparison_iterations.py
 ```
 Example Output (Figure 2 in paper):
-<img width="1800" height="1200" alt="average_utility_per_iteration" src="https://github.com/user-attachments/assets/dffa8eec-d455-49c2-93ed-f2485780dc95" />
+<img width="600" height="400" alt="average_utility_per_iteration" src="https://github.com/user-attachments/assets/dffa8eec-d455-49c2-93ed-f2485780dc95" />
 
 To test cluster size effects on utility over time:
 

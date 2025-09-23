@@ -19,7 +19,7 @@ python tests/cluster_size_comparison_iterations.py
 ```
 ### Results:
 
-<img width="450" height="300" alt="average_utility_per_iteration" src="https://github.com/user-attachments/assets/dffa8eec-d455-49c2-93ed-f2485780dc95" />
+<img width="300" height="200" alt="average_utility_per_iteration" src="https://github.com/user-attachments/assets/dffa8eec-d455-49c2-93ed-f2485780dc95" />
 
 To test cluster size effects on utility over time:
 
@@ -28,7 +28,7 @@ python tests/cluster_size_comparison_time.py
 ```
 ### Results:
 
-<img width="450" height="300" alt="average_utility_vs_time" src="https://github.com/user-attachments/assets/5255add3-87be-4fd6-bc52-bd5b4fb7daa0" />
+<img width="300" height="200" alt="average_utility_vs_time" src="https://github.com/user-attachments/assets/5255add3-87be-4fd6-bc52-bd5b4fb7daa0" />
 
 ## Iterative Clustering Compared to Optimal for Small Problems
 For small-scale problems, the clustering methods can be directly compared against optimal solutions. The tests/iteration_optimal_compared.py script directly compares the solutions produced by iterative clustering against the optimal solution for 500 randomly generated problems with nu = 10 robots and mu = 5 tasks.
@@ -53,7 +53,7 @@ python tests/method_time_comparison.py
 
 ### Results:
 
-<img width="500" height="400" alt="5_method_time_comparison" src="https://github.com/user-attachments/assets/2026e497-12ab-4b71-98a4-5e73c25b0241" />
+<img width="375" height="300" alt="5_method_time_comparison" src="https://github.com/user-attachments/assets/2026e497-12ab-4b71-98a4-5e73c25b0241" />
 
 ## Scalability Testing:
 The scalability of both the random and heuristic iterative clustering algorithms is tested on four problem sizes with results averaged over 100 trials. Random clustering scaled more efficiently than heuristic clustering due to the computational cost of calculating the heuristics for cluster formation.
@@ -64,6 +64,6 @@ python tests/scalability_test.py
 
 ### Results:
 
-<img width="500" height="409" alt="new_scalability_new_size" src="https://github.com/user-attachments/assets/d1996f27-14f0-4a23-98f9-90f65e9ec298" />
+<img width="375" height="307" alt="new_scalability_new_size" src="https://github.com/user-attachments/assets/d1996f27-14f0-4a23-98f9-90f65e9ec298" />
 
 

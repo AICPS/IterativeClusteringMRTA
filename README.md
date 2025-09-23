@@ -16,15 +16,15 @@ The below scripts test how cluster size limits affect the performance of the alg
 To test cluster size effects on utility per iteration:
 ```bash
 python tests/cluster_size_comparison_iterations.py
-```bash
+```
 Example Output (Figure 2 in paper):
 <img width="1800" height="1200" alt="average_utility_per_iteration" src="https://github.com/user-attachments/assets/dffa8eec-d455-49c2-93ed-f2485780dc95" />
 
 To test cluster size effects on utility over time:
 
-'''bash
-python tests/cluster_size_comparison_time.py
 ```bash
+python tests/cluster_size_comparison_time.py
+```
 Example Output (Figure 2 in paper):
 <img width="1800" height="1200" alt="average_utility_vs_time" src="https://github.com/user-attachments/assets/5255add3-87be-4fd6-bc52-bd5b4fb7daa0" />
 
